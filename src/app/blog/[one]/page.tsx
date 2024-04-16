@@ -1,4 +1,9 @@
-export default function BlogDetails({params}){
+export default function BlogDetails({params}:
+    {params:
+        {one:string
+
+        }})
+        {
     return(
         <>
         <h1>
