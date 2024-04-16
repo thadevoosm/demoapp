@@ -6,6 +6,7 @@ export default function Home() {
       <h1>
         Home
       </h1>
+      <Link href='/fetch'>Fetch</Link>
     </div>
   );
 }
