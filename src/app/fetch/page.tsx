@@ -1,3 +1,7 @@
+import { resolve } from "path";
+import { Suspense } from "react";
+import Loading from "../loading";
+
 type Repository ={
     id : number;
     name: string;
@@ -7,10 +11,13 @@ type Repository ={
 
 
 export default async function Fecthing() {
+
+
     const res = await fetch('https://api.github.com/repos/vercel/next.js');
     const data: Repository = await res.json();
 return(
     <>
+
     <h1 className="justify-center  text-center pt-11">
          {data.id}
     </h1>
