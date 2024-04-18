@@ -1,35 +1,19 @@
-import { resolve } from "path";
-import { Suspense } from "react";
-import Loading from "../loading";
+import React, { Suspense} from 'react'
+import Fecthing from './fetcting'
+import Loading from '../loading'
 
-type Repository ={
-    id : number;
-    name: string;
-    full_name: string;
-
-};
-
-
-export default async function Fecthing() {
-
-
-    const res = await fetch('https://api.github.com/repos/vercel/next.js');
-    const data: Repository = await res.json();
-return(
-    <>
-
-    <h1 className="justify-center  text-center pt-11">
-         {data.id}
-    </h1>
-
-    <h1>
-        {data.name}
-    </h1>
-
-    <h1>
-        {data.full_name}
-    </h1>
-    </>
-);
+export default function Fetch() {
+  return (
+    <div>
+        <h1 className='text-center pt-10 pb-10'>
+            Fetching Page Heading
+        </h1>
+        <Suspense fallback={<Loading />}>
+            <Fecthing />
+        </Suspense>
+    </div>
+  )
+}
+{
     
 }
