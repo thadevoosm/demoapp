@@ -11,7 +11,7 @@ async function GetBlog(one: string | number) {
     return res.json();
 }
 
-export default  function BlogDetails({params}) {
+export default  function BlogDetails({params}:{{params}: number}) {
     const blogdet = GetBlog(params.one)
 
   return (
