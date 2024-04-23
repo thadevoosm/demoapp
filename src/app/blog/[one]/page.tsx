@@ -1,20 +1,29 @@
-import React from 'react'
 
-export default function BlogDetails() {
+
+
+async function GetBlog(one: string | number) {
+    const res = await fetch('https://661f946f16358961cd94c6d6.mockapi.io/api/v1/Users/'+one,{
+        next :{
+            revalidate: 60
+        }
+    }
+    );
+    return res.json();
+}
+
+export default  function BlogDetails({params}) {
+    const blogdet = GetBlog(params.one)
+
   return (
-    <div>BlogDetails</div>
+    <div>
+        <nav>
+            <h2>
+                ticket Details
+            </h2>
+        </nav>
+        <h2>
+           hehe {blogdet.name}
+        </h2>
+    </div>
   )
-}
-
-export async function  generateStataicParams() {
-    const UName :UserName = await fetch('https://661f946f16358961cd94c6d6.mockapi.io/api/v1/Users').then((res)=> res.json());
-
-    
-}
-
-type UserName = {
-    id: number;
-    name: string;
-    avatar: string;
-    createdAt: Date;
 }
