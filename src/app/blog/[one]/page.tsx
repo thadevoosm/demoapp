@@ -33,11 +33,11 @@ export default  async function BlogDetails({params}:{params: {one: string}}) {
             </h2>
         </nav>
         <h2>
-           hehe {blogdet.title}
+           hehe {blogdet.name}
         </h2>
         <h2
         >
-            {blogdet.price}
+            {blogdet.avatar}
         </h2>
     </div>
   )
