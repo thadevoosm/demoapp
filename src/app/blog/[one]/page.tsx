@@ -14,7 +14,11 @@ async function GetBlog(one: any) {
     return res.json();
 }
 export async function generateStaticParams(){
-    return [{one: '1'}, {one:'2'}, {one:'3'}, {one:'4'}];
+    const respond = await fetch(`https://661f946f16358961cd94c6d6.mockapi.io/api/v1/Users/`).then((res) => res.json())
+    return respond.map((respo: any) =>({
+        one: respo.one
+        
+    }))
 }
 
 export default  async function BlogDetails({params}:{params: {one: string}}) {
