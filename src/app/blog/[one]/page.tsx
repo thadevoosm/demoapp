@@ -35,10 +35,10 @@ export default  async function BlogDetails({params}:{params: {one: string}}) {
         <h2>
            hehe {blogdet.name}
         </h2>
-        <h2
-        >
-            {blogdet.avatar}
-        </h2>
+        <img
+        
+            src={blogdet.avatar}>
+        </img>
     </div>
   )
 }
