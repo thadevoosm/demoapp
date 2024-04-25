@@ -15,9 +15,11 @@ async function GetBlog(one: any) {
     return res.json();
 }
 
-
-export default  async function BlogDetails({params}:{params: {params: string}}) {
-    const blogdet = await GetBlog(params);
+export async function generateStaticParams(){
+    return [{one:'1'},{one:'2'},{one:'3'},{one:'4'}];
+}
+export default  async function BlogDetails({params}:{params: {one: string}}) {
+    const blogdet = await GetBlog(params?.one);
   return (
     <div>
         <nav>
