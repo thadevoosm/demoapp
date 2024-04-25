@@ -24,6 +24,7 @@ export async function generateStaticParams(){
 }
 export default  async function BlogDetails({params}:{params: {one: string}}) {
     const blogdet = await GetBlog(params?.one);
+    console.log(blogdet);
   return (
     <div>
         <nav>
@@ -32,12 +33,12 @@ export default  async function BlogDetails({params}:{params: {one: string}}) {
             </h2>
         </nav>
         <h2>
-           hehe {blogdet.name}
+           hehe {blogdet.title}
         </h2>
-        <img 
-         src={blogdet.avatar}
-         >
-        </img>
+        <h2
+        >
+            {blogdet.price}
+        </h2>
     </div>
   )
 }
