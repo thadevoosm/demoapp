@@ -4,8 +4,9 @@
 
 
 async function GetBlog(one: any) {
-    const res = await fetch(`https://661f946f16358961cd94c6d6.mockapi.io/api/v1/Users/${one}`);
+    const res = await fetch(`https://661f946f16358961cd94c6d6.mockapi.io/api/v1/Users/${one.one}`);
     console.log(res.status);
+ console.log(one);
 
 
     if(!res){
@@ -13,18 +14,10 @@ async function GetBlog(one: any) {
     }
     return res.json();
 }
-export async function generateStaticParams(){
-    const respond = await fetch(`https://661f946f16358961cd94c6d6.mockapi.io/api/v1/Users/`).then((res) => res.json())
-    return respond.map((respo: any) =>({
-        one: respo.one
-        
-    }))
-}
 
-export default  async function BlogDetails({params}:{params: {one: string}}) {
-    const blogdet = await GetBlog(params?.one);
-    console.log(blogdet);
 
+export default  async function BlogDetails({params}:{params: {params: string}}) {
+    const blogdet = await GetBlog(params);
   return (
     <div>
         <nav>
