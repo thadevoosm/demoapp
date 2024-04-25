@@ -1,10 +1,10 @@
-import { notEqual } from "assert";
+
 
 
 
 
 async function GetBlog(one: any) {
-    const res = await fetch(`https://661f946f16358961cd94c6d6.mockapi.io/api/v1/Users/${one.one}`);
+    const res = await fetch(`https://661f946f16358961cd94c6d6.mockapi.io/api/v1/Users/${one}`);
     console.log(res.status);
 
 
@@ -14,7 +14,7 @@ async function GetBlog(one: any) {
     return res.json();
 }
 export async function generateStaticParams(){
-    return [{one: 1}, {one:2}, {one:3}, {one:4}];
+    return [{one: '1'}, {one:'2'}, {one:'3'}, {one:'4'}];
 }
 
 export default  async function BlogDetails({params}:{params: {one: string}}) {
