@@ -1,3 +1,5 @@
+import { Key } from "react";
+import Card from "../card";
 
 
 
@@ -39,6 +41,7 @@ export default  async function BlogDetails({params}:{params: {one: string}}) {
         
             src={blogdet.avatar}>
         </img>
-    </div>
+        
+    </div> 
   )
 }
