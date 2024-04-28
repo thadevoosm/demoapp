@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { useRouter } from 'next/navigation';
+useRouter
 
 interface User{
   id: number;
@@ -14,7 +15,7 @@ interface CardProps{
 
 }
 
-export default function card({user}: CardProps) {
+export default function Card({user}: CardProps) {
   const router = useRouter()
   const {id, name, avatar} = user;
 
