@@ -30,7 +30,7 @@ export default function Card({user}: CardProps) {
           <h2>
             Name:{name}
           </h2>
-          <button className='p-1 m-1 bg-red-500' onClick={()=> router.push(`blog/${id}`)} > Click Here</button>
+          <button className='p-1 m-1 bg-red-500' onClick={()=> router.push(`blog/${id}`)} > view details of {name}</button>
       </div>
       
     </div>
