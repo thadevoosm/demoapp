@@ -1,4 +1,6 @@
+'use client'
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 interface User{
   id: number;
@@ -13,6 +15,7 @@ interface CardProps{
 }
 
 export default function card({user}: CardProps) {
+  const router = useRouter()
   const {id, name, avatar} = user;
 
  
@@ -26,7 +29,9 @@ export default function card({user}: CardProps) {
           <h2>
             Name:{name}
           </h2>
+          <button className='p-1 m-1 bg-red-500' onClick={()=> router.push(`blog/${id}`)} > Click Here</button>
       </div>
+      
     </div>
   )
 }
